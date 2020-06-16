@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl  "http://www.w3.org/2002/07/owl#">
+  <!ENTITY drb  "http://www.gael.fr/drb#">
+  <!ENTITY aeolus "http://www.esa.int/aeolus#"> 
+]>
+
+<rdf:RDF xmlns:rdf  = "&rdf;"
+         xmlns:rdfs = "&rdfs;"
+         xmlns:owl  = "&owl;"
+         xmlns:drb  = "&drb;"
+         xmlns:aeolus = "&aeolus;">
+
+   <owl:Ontology rdf:about="&aeolus;"/>
+
+   <!--
+   Based on
+   https://earth.esa.int/pi/esa?type=file&table=aotarget&cmd=image&alias=Aeolus_L2B_2C_Input_Output_DD_ICD
+   -->
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--              Aeolus PRODUCT               -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&aeolus;product">
+      <rdfs:label xml:lang="en">Aeolus Product</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;tgz"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AE_(OPER|RPRO|TEST)_.........._[0-9]{8}T[0-9]{6}.*\.(TGZ|tar)</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+
+   <!-- ========================================= -->
+   <!-- XML Header                                -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&aeolus;productXmlHeader">
+      <rdfs:label xml:lang="en">Aeolus Product: XML Header</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <rdfs:subClassOf rdf:resource="&drb;xml-content"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AE_(OPER|RPRO|TEST)_.........._[0-9]{8}T[0-9]{6}.*\.HDR</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+
+</rdf:RDF>
