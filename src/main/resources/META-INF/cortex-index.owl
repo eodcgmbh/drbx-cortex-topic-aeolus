@@ -18,6 +18,7 @@
    <!--
    Based on
    https://earth.esa.int/pi/esa?type=file&table=aotarget&cmd=image&alias=Aeolus_L2B_2C_Input_Output_DD_ICD
+   https://earth.esa.int/pi/esa?type=file&table=aotarget&cmd=image&alias=Aeolus_L1B_Input_Output_DD_ICD
    -->
    
    <!-- ========================================= -->
@@ -51,4 +52,40 @@
       </drb:signature>
    </owl:Class>
 
+   <!-- ========================================= -->
+   <!-- DBL File L1B                              -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&aeolus;product1bDbl">
+      <rdfs:label xml:lang="en">AEOLUS ALD_U_N_1B DBL</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AE_(OPER|RPRO|TEST)_ALD_U_N_1B_[0-9]{8}T[0-9]{6}.*\.DBL</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/ALD_U_N_1B.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>
+   
+   <!-- ========================================= -->
+   <!-- DBL File L2B                              -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&aeolus;product2bDbl">
+      <rdfs:label xml:lang="en">AEOLUS ALD_U_N_1B DBL</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>AE_(OPER|RPRO|TEST)_ALD_U_N_2B_[0-9]{8}T[0-9]{6}.*\.DBL</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/ALD_U_N_2B.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>
+   
 </rdf:RDF>
