@@ -1,0 +1,2216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sdf="http://www.gael.fr/2004/12/drb/sdf" xmlns:drb="http://www.gael.fr/drb#" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- ========================================= -->
+  <!--           MAIN PRODUCT HEADER   -->
+  <!-- ========================================= -->
+  <xs:complexType name="MPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">MPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Product -->
+      <xs:element name="PRODUCT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Product File name</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>62</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Processing stage code -->
+      <xs:element name="PROC_STAGE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Stage Flag</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Reference DFCB -->
+      <xs:element name="REF_DOC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reference Document Describing Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>23</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Spare -->
+      <!-- Field 5: Acquisition station -->
+      <xs:element name="ACQUISITION_STATION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Acquisition Station ID</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">62</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>20</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Processing center -->
+      <xs:element name="PROC_CENTER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Center ID which generated current product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Processing time -->
+      <xs:element name="PROC_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC Time of Processing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Software version / Processor name -->
+      <xs:element name="SOFTWARE_VER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Software Version number of processing software</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>14</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Spare -->
+      <!-- Field 10: Sensing start -->
+      <xs:element name="SENSING_START" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC start time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">56</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: Sensing stop -->
+      <xs:element name="SENSING_STOP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC stop time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 12: Spare -->
+      <!-- Field 13: Mission phase -->
+      <xs:element name="PHASE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Phase</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 14: Cycle number -->
+      <xs:element name="CYCLE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cycle</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">6</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:short">
+            <xs:minInclusive value="-999" />
+            <xs:maxInclusive value="+999" />
+            <xs:pattern value="\+[0-9]{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 15: Relative orbit number -->
+      <xs:element name="REL_ORBIT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start relative orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="-99999" />
+            <xs:maxInclusive value="+99999" />
+            <xs:pattern value="\+[0-9]{5}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 16: Absolute orbit number -->
+      <xs:element name="ABS_ORBIT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start absolute orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="-99999" />
+            <xs:maxInclusive value="+99999" />
+            <xs:pattern value="\+[0-9]{5}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 17: State vector time -->
+      <xs:element name="STATE_VECTOR_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC state vector time</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 18: Delta UT1 -->
+      <xs:element name="DELTA_UT1" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">DUT1=UT1-UTC</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 19: X_POSITION -->
+      <xs:element name="X_POSITION" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 20: Y_POSITION -->
+      <xs:element name="Y_POSITION" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 21: Z_POSITION -->
+      <xs:element name="Z_POSITION" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 22: X_VELOCITY -->
+      <xs:element name="X_VELOCITY" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 23: Y_VELOCITY -->
+      <xs:element name="Y_VELOCITY" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 24: Z_VELOCITY -->
+      <xs:element name="Z_VELOCITY" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 25: Vector Source -->
+      <xs:element name="VECTOR_SOURCE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Source of Orbit Vectors</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 26: Spare -->
+      <!-- Field 27: UTC_SBT_TIME -->
+      <xs:element name="UTC_SBT_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time corresponding to SBT below</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">55</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 28: SAT_BINARY_TIME -->
+      <xs:element name="SAT_BINARY_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Satellite Binary Time (SBT)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 29: CLOCK_STEP -->
+      <xs:element name="CLOCK_STEP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Clock Step Size</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">5</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 30: Spare -->
+      <!-- Field 31: Leap second time -->
+      <xs:element name="LEAP_UTC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time of the occurrence of the Leap Second</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">43</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 32: Gps Utc Time Difference -->
+      <xs:element name="GPS_UTC_TIME_DIFFERENCE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Seconds of GPS UTC time difference before time of occurrence of the leap seoncd</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">24</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:short">
+            <xs:minInclusive value="-1" />
+            <xs:maxInclusive value="+1" />
+            <xs:pattern value="\+[0-9]{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 33: Leap second sign -->
+      <xs:element name="LEAP_SIGN">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second sign</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:short">
+            <xs:minInclusive value="-1" />
+            <xs:maxInclusive value="+1" />
+            <xs:pattern value="\+[0-9]{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 34: Leap second error -->
+      <xs:element name="LEAP_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second error</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">13</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 35: Spare -->
+      <!-- Field 36: Product error -->
+      <xs:element name="PRODUCT_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">1 or 0. If 1, errors have been reported in the product. User should then refer to the SPH or Summary Quality ADS of the product for details of the error condition. If not used, set to 0.r</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">12</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 37: Product total size -->
+      <xs:element name="TOT_SIZE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total Size Of Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="0" />
+            <xs:minInclusive value="-99999999999999999999" />
+            <xs:maxInclusive value="+99999999999999999999" />
+            <xs:minExclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 38: Length of SPH -->
+      <xs:element name="SPH_SIZE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length Of SPH</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:minExclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 39: Number of DSDs -->
+      <xs:element name="NUM_DSD">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSDs</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:minExclusive value="0" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 40: Size of DSD -->
+      <xs:element name="DSD_SIZE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length of Each DSD</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:minExclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 41: Number of DSs -->
+      <xs:element name="NUM_DATA_SETS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSs attached</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">42</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:minExclusive value="0" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 42: Spare -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--         SPECIFIC PRODUCT HEADER -->
+  <!--               ALD_U_N_1B   -->
+  <!-- ========================================= -->
+  <xs:complexType name="SPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: SPH Descriptor-->
+      <xs:element name="SPH_DESCRIPTOR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">SPH Descriptor</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>28</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Intersect_Start_Lat-->
+      <xs:element name="INTERSECT_START_LAT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of the intersection of WGS84 DEM and the satellite line-of-sight for the first measurement (first measurement centroid time of the first BRC)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">20</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 3: Intersect_Start_Long-->
+      <xs:element name="INTERSECT_START_LONG">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of the intersection of WGS84 DEM and the satellite line-of-sight for the first measurement (first measurement centroid time of the first BRC)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">21</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 4: Intersect_Stop_Lat-->
+      <xs:element name="INTERSECT_STOP_LAT">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of the intersection of WGS84 DEM and the satellite line-of-sight for the first measurement (first measurement centroid time of the first BRC)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 5: Intersect_Stop_Long-->
+      <xs:element name="INTERSECT_STOP_LONG">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of the intersection of WGS84 DEM and the satellite line-of-sight for the first measurement (first measurement centroid time of the first BRC)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">20</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 6: Sat_Track -->
+      <xs:element name="SAT_TRACK" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sub-satellite track heading (nadir) at the sensing start time in the MPH</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">57</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Spare -->
+      <!-- Field 8: Base Laser Frequency -->
+      <xs:element name="BASE_LASER_FREQUENCY" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Base Laser Transmit Frequency</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">21</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: N_Max-->
+      <xs:element name="N_MAX">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Measurement array size of the output L1B product. This value is the maximum number of measurements per BRC in the input Level 1A data.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">6</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 10: N_Max_Actual-->
+      <xs:element name="N_MAX_ACTUAL">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Actual maximum number of measurements per BRC in Level 1B output product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 11: Total_Num_of_Observations-->
+      <xs:element name="TOTAL_NUM_OF_OBSERVATIONS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of L1A input observations</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">26</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 12: Total_Num_of_Measurements-->
+      <xs:element name="TOTAL_NUM_OF_MEASUREMENTS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of total measurements</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">26</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 13: Total_Num_of_Reference_Pulses-->
+      <xs:element name="TOTAL_NUM_OF_REFERENCE_PULSES">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of total reference pulses</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">30</sdf:padding>
+              <sdf:padding type="footer">52</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 14: Spare -->
+      <!-- Field 15: Num_Mie_Observations_Used-->
+      <xs:element name="NUM_MIE_OBSERVATIONS_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of observations used for Mie wind velocity  estimates (24 estimates, one per altitude bin)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">26</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 16: Num_Rayleigh_Observations_Used-->
+      <xs:element name="NUM_RAYLEIGH_OBSERVATIONS_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of observations used for Rayleigh wind velocity estimates (24 estimates, one per altitude bin)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">31</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 17: Num_Mie_Measurements_Used-->
+      <xs:element name="NUM_MIE_MEASUREMENTS_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of measurements used for Mie wind velocity estimates (24 estimates, one per altitude bin)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">26</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 18: Num_Rayleigh_Measurements_Used-->
+      <xs:element name="NUM_RAYLEIGH_MEASUREMENTS_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of Rayleigh measurements used for Rayleigh wind velocity estimates (24 estimates, one per altitude bin)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">31</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 19: Num_Mie_Reference_Pulses_Used-->
+      <xs:element name="NUM_MIE_REFERENCE_PULSES_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of Mie reference pulses used</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">30</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 20: Num_Rayleigh_Reference_Pulses_Used-->
+      <xs:element name="NUM_RAYLEIGH_REFERENCE_PULSES_USED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of Rayleigh reference pulses used</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">35</sdf:padding>
+              <sdf:padding type="footer">102</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 21: Spare -->
+      <!-- Field 22: Num_Mie_Zero_Wind_Detected-->
+      <xs:element name="NUM_MIE_ZERO_WIND_DETECTED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of observations in which Mie zero wind is detected(a new ground correction factor calculated)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">27</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 23: Num_Rayleigh_Zero_Wind_Detected-->
+      <xs:element name="NUM_RAYLEIGH_ZERO_WIND_DETECTED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of observations containing Rayleigh zero wind is detected (a new ground correction factor calculated)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">32</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 24: Num_Mie_Measurements_Ground_Echo_Detected-->
+      <xs:element name="NUM_MIE_MEASUREMENTS_GROUND_ECHO_DETECTED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of Mie measurements where ground wind bins were detected</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">42</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 25: Num_Rayleigh_Measurements_Ground_Echo_Detected-->
+      <xs:element name="NUM_RAYLEIGH_MEASUREMENTS_GROUND_ECHO_DETECTED">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of Rayleigh measurements where ground wind bins were detected</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">102</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 26: Spare -->
+      <!-- Field 27: Total_Num_of_Measurement_Invalid-->
+      <xs:element name="TOTAL_NUM_OF_MEASUREMENT_INVALID">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of measurements for which the number of corresponding valid pulses is below Meas_Cavity_Lock_Status_Thresh</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">33</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 28: Total_Num_of_Pulse_Validity_Status_Flag_False-->
+      <xs:element name="TOTAL_NUM_OF_PULSE_VALIDITY_STATUS_FLAG_FALSE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of reference pulses with Pulse_Validity_Status_Flag set to false</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">46</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 29: Total_Num_of_Sat_Not_on_Target_Measurements-->
+      <xs:element name="TOTAL_NUM_OF_SAT_NOT_ON_TARGET_MEASUREMENTS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total number of measurements with satellite not on target status</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">44</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 30: Total_Num_of_Corrupt_Mie_Measurement_Bins-->
+      <xs:element name="TOTAL_NUM_OF_CORRUPT_MIE_MEASUREMENT_BINS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The total number of corrupt Mie measurement bins</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">42</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 31: Total_Num_of_Corrupt_Rayleigh_Measurement_Bins-->
+      <xs:element name="TOTAL_NUM_OF_CORRUPT_RAYLEIGH_MEASUREMENT_BINS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The total number of corrupt Rayleigh measurement bins.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 32: Total_Num_of_Corrupt_Mie_Reference_Pulses-->
+      <xs:element name="TOTAL_NUM_OF_CORRUPT_MIE_REFERENCE_PULSES">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The total number of corrupt Mie reference pulses</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">42</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 33: Total_Num_of_Corrupt_Rayleigh_Reference_Pulses-->
+      <xs:element name="TOTAL_NUM_OF_CORRUPT_RAYLEIGH_REFERENCE_PULSES">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The total number of corrupt Rayleigh reference pulses</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 34: NF_Order-->
+      <xs:element name="NF_ORDER">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of Fourier terms used in the Harmonic Bias Estimation</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">102</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:long">
+            <xs:minInclusive value="-9999999999" />
+            <xs:maxInclusive value="+9999999999" />
+            <xs:pattern value="\+[0-9]{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!-- Field 35: Spare -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--        DATASET DESCRIPTION HEADER    -->
+  <!--               ALD_U_N_1B   -->
+  <!-- ========================================= -->
+  <xs:complexType name="DSD_HEADER_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">DSD HEADER</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: DS Name-->
+      <xs:element name="DS_NAME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Name describing the dataset.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>28</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: DS Type-->
+      <xs:element name="DS_TYPE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Type of dataset. It can be M = Measurement, R = Reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: External File Name -->
+      <xs:element name="FILENAME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Name of the reference file. Used if DS_TYPE is set to R. It is left justified with trailing blanks. The file name includes the extension. If not used it is set to 62 blanks</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>62</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: DS Offset-->
+      <xs:element name="DS_OFFSET" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of MPH + SPH (including DSDs) + size of previous datasets (if any)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: DS Size-->
+      <xs:element name="DS_SIZE" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of the attached dataset. Used if DS_TYPE is set to M. If not used set to 0</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Number of DSRs -->
+      <xs:element name="NUM_DSR" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of dataset records</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Length of DSRs -->
+      <xs:element name="DSR_SIZE" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length in bytes of the dataset record. If not used set to +0. If variable set to -1</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Byte Order -->
+      <xs:element name="BYTE_ORDER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">"3210" for binary DS’s to designate byte order is most significant byte first</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">12</sdf:padding>
+              <sdf:padding type="footer">35</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Spare -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ======================================================== -->
+  <!--    AEOLUS ALD_U_N_1B.DBL GEOLOCATION Observation_AOCS    -->
+  <!-- ======================================================== -->
+  <xs:complexType name="Observation_AOCS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-4 Level 1A Geolocation Observation_AOCS Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Observation_Centroid_Time-->
+      <xs:element name="Observation_Centroid_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Observation Centroid Time (UTC): Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Observation_Centroid_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Observation Centroid Time (UTC): Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Observation_Centroid_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Observation Centroid Time (UTC): Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: X_Position  -->
+      <xs:element name="X_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Y_Position  -->
+      <xs:element name="Y_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Z_Position  -->
+      <xs:element name="Z_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: X_Velocity  -->
+      <xs:element name="X_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Y_Velocity  -->
+      <xs:element name="Y_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Z_Velocity  -->
+      <xs:element name="Z_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Roll_Angle  -->
+      <xs:element name="Roll_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Roll angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Pitch_Angle  -->
+      <xs:element name="Pitch_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Pitch angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Yaw_Angle  -->
+      <xs:element name="Yaw_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Yaw angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: Spare_1  -->
+      <xs:element name="Spare_1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Spare</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ======================================================== -->
+  <!--    AEOLUS ALD_U_N_1B.DBL GEOLOCATION Measurement_AOCS    -->
+  <!-- ======================================================== -->
+  <xs:complexType name="Measurement_AOCS_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-5 Level 1A Geolocation Measurement_AOCS Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Measurement_Centroid_Time-->
+      <xs:element name="Measurement_Centroid_Time_Day" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Measurement Centroid Time (UTC): Day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Measurement_Centroid_Time_Second" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Measurement Centroid Time (UTC): Second of day</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Measurement_Centroid_Time_Microsecond" type="xs:unsignedInt">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Measurement Centroid Time (UTC): Microsecond part</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: X_Position  -->
+      <xs:element name="X_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Y_Position  -->
+      <xs:element name="Y_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Z_Position  -->
+      <xs:element name="Z_Position" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z position in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: X_Velocity  -->
+      <xs:element name="X_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Y_Velocity  -->
+      <xs:element name="Y_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Z_Velocity  -->
+      <xs:element name="Z_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z velocity in Earth-fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 8: Roll_Angle  -->
+      <xs:element name="Roll_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Roll angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 9: Pitch_Angle  -->
+      <xs:element name="Pitch_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Pitch angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 10: Yaw_Angle  -->
+      <xs:element name="Yaw_Angle" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Yaw angle in satellite reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 11: Spare_2  -->
+      <xs:element name="Spare_2" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Spare</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- =========================================================== -->
+  <!--  AEOLUS ALD_U_N_1B.DBL GEOLOCATION Observation_Geolocation  -->
+  <!-- =========================================================== -->
+  <xs:complexType name="Observation_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-6 Level 1A Geolocation Observation_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Observation_Mie_Geolocation -->
+      <xs:element name="Observation_Mie_Geolocation" type="Observation_Mie_Geolocation_TYPE" />
+      <!-- Field 2: Observation_Rayleigh_Geolocation -->
+      <xs:element name="Observation_Rayleigh_Geolocation" type="Observation_Rayleigh_Geolocation_TYPE" />
+      <!-- Field 3: Geolocation_of_DEM_Intersection -->
+      <xs:element name="Geolocation_of_DEM_Intersection" type="Geolocation_of_DEM_Intersection_TYPE" />
+      <!-- Field 4: Line_of_Sight_Velocity -->
+      <xs:element name="Line_of_Sight_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Velocity along the line of sight at the DEM intersection</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Geoid_Separation -->
+      <xs:element name="Geoid_Separation" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Height of geoid above WGS84 ellipsoid</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Spare_3  -->
+      <xs:element name="Spare_3" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Spare</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--     AEOLUS ALD_U_N_1B.DBL GEOLOCATION Observation_Mie_Geolocation -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Observation_Mie_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-7 Level 1A Geolocation Observation_Mie_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: List_of_Observation_Geolocation_of_Height_Bins -->
+      <xs:element name="List_of_Observation_Geolocation_of_Height_Bins">
+        <xs:annotation>
+          <xs:documentation xml:lang="en" />
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Observation_Geolocation_of_Height_Bin" type="Observation_Geolocation_of_Height_Bin_TYPE" minOccurs="0" maxOccurs="25">
+              <xs:annotation>
+                <xs:appinfo>
+                  <sdf:block>
+                    <sdf:occurrence>25</sdf:occurrence>
+                  </sdf:block>
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--     AEOLUS ALD_U_N_1B.DBL GEOLOCATION Observation_Rayleigh_Geolocation -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Observation_Rayleigh_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-8 Level 1A Geolocation Observation_Rayleigh_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: List_of_Observation_Geolocation_of_Height_Bins -->
+      <xs:element name="List_of_Observation_Geolocation_of_Height_Bins">
+        <xs:annotation>
+          <xs:documentation xml:lang="en" />
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Observation_Geolocation_of_Height_Bin" type="Observation_Geolocation_of_Height_Bin_TYPE" minOccurs="0" maxOccurs="25">
+              <xs:annotation>
+                <xs:appinfo>
+                  <sdf:block>
+                    <sdf:occurrence>25</sdf:occurrence>
+                  </sdf:block>
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ======================================================================== -->
+  <!-- AEOLUS ALD_U_N_1B.DBL GEOLOCATION Observation_Geolocation_of_Height_Bin  -->
+  <!-- ======================================================================== -->
+  <xs:complexType name="Observation_Geolocation_of_Height_Bin_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-9 Level 1A Geolocation Observation_Geolocation_of_Height_Bin Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Longitude_of_Height_Bin -->
+      <xs:element name="Longitude_of_Height_Bin" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of the upper or lower edge (see Table 5-7, Table 5-8 List_of_Observation_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Latitude_of_Height_Bin -->
+      <xs:element name="Latitude_of_Height_Bin" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of the upper or lower edge (see Table 5-7, Table 5-8 List_of_Observation_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Altitude_of_Height_Bin -->
+      <xs:element name="Altitude_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Altitude of the upper or lower edge (see Table 5-7, Table 5-8 List_of_Observation_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight. Value is negative if below DEM surface.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Topocentric_Azimuth_of_Height_Bin -->
+      <xs:element name="Topocentric_Azimuth_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Azimuth of target-to-satellite topocentric (horizontal reference frame) pointing vector of the height bin. Topocentric_Azimuth_of_Height_Bin ranges from 0 deg to 360 deg and is measured from North over East. (See R-5)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Topocentric_Elevation_of_Height_Bin -->
+      <xs:element name="Topocentric_Elevation_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Elevation of target-to-satellite topocentric (horizontal reference frame) pointing vector of the height bin. Topocentric_Elevation_of_Height_Bin ranges from -90 deg to +90 deg and is measured positive from the North-East plane towards Zenith (See R-5).</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 6: Target_to_Sun_Visibility_Flag -->
+      <xs:element name="Target_to_Sun_Visibility_Flag" type="xs:short">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Value set to ‘-1’ if sun eclipsed by earth; value set to ‘+1’ if sun (center) visible.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 7: Satellite_Range_of_Height_Bin -->
+      <xs:element name="Satellite_Range_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Distance along the LOS between the instrument and the lower edge of the height bin.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--    AEOLUS ALD_U_N_1B.DBL GEOLOCATION Geolocation_of_DEM_Intersection   -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Geolocation_of_DEM_Intersection_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-10 Level 1A Geolocation Geolocation_of_DEM_Intersection Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Latitude_of_DEM_Intersection -->
+      <xs:element name="Latitude_of_DEM_Intersection" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of the intersection of DEM and the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Longitude_of_DEM_Intersection -->
+      <xs:element name="Longitude_of_DEM_Intersection" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of the intersection of DEM and the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Altitude_of_DEM_Intersection -->
+      <xs:element name="Altitude_of_DEM_Intersection" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Altitude of the intersection of DEM and the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Argument_of_Latitude_DEM_Intersection -->
+      <xs:element name="Argument_of_Latitude_DEM_Intersection" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Argument of Latitude of the intersection of DEM and the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--     AEOLUS ALD_U_N_1B.DBL GEOLOCATION Measurement_Geolocation-->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Measurement_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-11 Level 1A Geolocation Measurement_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Mie_Geolocation -->
+      <xs:element name="Mie_Geolocation" type="Mie_Geolocation_TYPE" />
+      <!-- Field 2: Rayleigh_Geolocation -->
+      <xs:element name="Rayleigh_Geolocation" type="Rayleigh_Geolocation_TYPE" />
+      <!-- Field 3: Geolocation_of_DEM_Intersection -->
+      <xs:element name="Geolocation_of_DEM_Intersection" type="Geolocation_of_DEM_Intersection_TYPE" />
+      <!-- Field 4: AOCS_LOS_Velocity -->
+      <xs:element name="AOCS_LOS_Velocity" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Velocity along the line of sight at the DEM intersection</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 5: Spare_4  -->
+      <xs:element name="Spare_4" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Spare</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--     AEOLUS ALD_U_N_1B.DBL GEOLOCATION Mie_Geolocation   -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Mie_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-12 Level 1A Geolocation Mie_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: List_of_Geolocation_of_Height_Bins -->
+      <xs:element name="List_of_Geolocation_of_Height_Bins">
+        <xs:annotation>
+          <xs:documentation xml:lang="en" />
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Geolocation_of_Height_Bin" type="Geolocation_of_Height_Bin_TYPE" minOccurs="0" maxOccurs="25">
+              <xs:annotation>
+                <xs:appinfo>
+                  <sdf:block>
+                    <sdf:occurrence>25</sdf:occurrence>
+                  </sdf:block>
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--     AEOLUS ALD_U_N_1B.DBL GEOLOCATION Rayleigh_Geolocation   -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Rayleigh_Geolocation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-13 Level 1A Geolocation Rayleigh_Geolocation Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: List_of_Geolocation_of_Height_Bins -->
+      <xs:element name="List_of_Geolocation_of_Height_Bins">
+        <xs:annotation>
+          <xs:documentation xml:lang="en" />
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Geolocation_of_Height_Bin" type="Geolocation_of_Height_Bin_TYPE" minOccurs="0" maxOccurs="25">
+              <xs:annotation>
+                <xs:appinfo>
+                  <sdf:block>
+                    <sdf:occurrence>25</sdf:occurrence>
+                  </sdf:block>
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ====================================================================== -->
+  <!--    AEOLUS ALD_U_N_1B.DBL GEOLOCATION Geolocation_of_Height_Bin    -->
+  <!-- ====================================================================== -->
+  <xs:complexType name="Geolocation_of_Height_Bin_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Table 5-14 Level 1A Geolocation Geolocation_of_Height_Bin Content Description</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- Field 1: Longitude_of_Height_Bin -->
+      <xs:element name="Longitude_of_Height_Bin" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Longitude of the upper or lower edge (see Table 5-12, Table 5-13, List_of_Geolocation_of_Height_Bins description)of the height bin along the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 2: Latitude_of_Height_Bin -->
+      <xs:element name="Latitude_of_Height_Bin" type="xs:int">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Latitude of the upper or lower edge (see Table 5-12, Table 5-13, List_of_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 3: Altitude_of_Height_Bin -->
+      <xs:element name="Altitude_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Altitude of the upper or lower edge (see Table 5-12, Table 5-13, List_of_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight. Value is negative if below DEM surface.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Field 4: Sattelite_Range_of_Height_Bin -->
+      <xs:element name="Sattelite_Range_of_Height_Bin" type="xs:double">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Range of satellite to the upper or lower edge (see Table 5-12, Table 5-13, List_of_Geolocation_of_Height_Bins description) of the height bin along the line-of-sight</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:encoding>BINARY</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--           ELEMENT DEFINITION    -->
+  <!-- ========================================= -->
+  <xs:element name="DBLFILE">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">AEOLUS ALD_U_N_1B DBL.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <!-- Main Product Header -->
+        <xs:element name="MPH" type="MPH_TYPE" />
+        <!-- Specific Product Header -->
+        <xs:element name="SPH" type="SPH_TYPE" />
+        <!-- Dataset Descriptions -->
+        <xs:element name="DSDS">
+          <xs:annotation>
+            <xs:documentation xml:lang="en" />
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DSD" type="DSD_HEADER_TYPE" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <sdf:block>
+                      <sdf:occurrence query="../../MPH/NUM_DSD" />
+                    </sdf:block>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Datasets -->
+        <xs:element name="GEOLOCATION_ADS" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en" />
+            <xs:appinfo>
+              <sdf:block>
+                <sdf:occurrence query="../../DSDS/DSD[matches(DS_NAME, '.*Geolocation_ADS.*')]/NUM_DSR" />
+              </sdf:block>
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Field 1: Data Record Time-->
+              <xs:element name="Start_of_Observation_Time_Day" type="xs:int">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Satellite time at start of BRC (UTC): Day</xs:documentation>
+                  <xs:appinfo>
+                    <sdf:block>
+                      <sdf:encoding>BINARY</sdf:encoding>
+                      <sdf:length>4</sdf:length>
+                    </sdf:block>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Start_of_Observation_Time_Second" type="xs:unsignedInt">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Satellite time at start of BRC (UTC): Second of day</xs:documentation>
+                  <xs:appinfo>
+                    <sdf:block>
+                      <sdf:encoding>BINARY</sdf:encoding>
+                      <sdf:length>4</sdf:length>
+                    </sdf:block>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Start_of_Observation_Time_Microsecond" type="xs:unsignedInt">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Satellite time at start of BRC (UTC): Microsecond part</xs:documentation>
+                  <xs:appinfo>
+                    <sdf:block>
+                      <sdf:encoding>BINARY</sdf:encoding>
+                      <sdf:length>4</sdf:length>
+                    </sdf:block>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <!-- Field 2: Raw_Instrument_Function  -->
+              <xs:element name="Raw_Instrument_Function" type="xs:unsignedShort">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Raw instrument function (binary value in the telemetry)</xs:documentation>
+                  <xs:appinfo>
+                    <sdf:block>
+                      <sdf:encoding>BINARY</sdf:encoding>
+                      <sdf:length>2</sdf:length>
+                    </sdf:block>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <!-- Field 3: Observation_AOCS structure  -->
+              <xs:element name="Observation_AOCS" type="Observation_AOCS_TYPE" />
+              <!-- Field 4: List_of_Measurement_AOCSs  -->
+              <xs:element name="List_of_Measurement_AOCSs">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en" />
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Measurement_AOCS" type="Measurement_AOCS_TYPE" minOccurs="0" maxOccurs="30">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <sdf:block>
+                            <sdf:occurrence query="../../../SPH/N_MAX" />
+                          </sdf:block>
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!-- Field 5: Observation_Geolocation structure  -->
+              <xs:element name="Observation_Geolocation" type="Observation_Geolocation_TYPE" />
+              <!-- Field 6: List_of_Measurement_Geolocations  -->
+              <xs:element name="List_of_Measurement_Geolocations">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en" />
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Measurement_Geolocation" type="Measurement_Geolocation_TYPE" minOccurs="0" maxOccurs="30">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <sdf:block>
+                            <sdf:occurrence query="../../../SPH/N_MAX" />
+                          </sdf:block>
+                        </xs:appinfo>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
