@@ -65,7 +65,7 @@
          <drb:nameMatch>AE_(OPER|RPRO|TEST)_ALD_U_N_1B_[0-9]{8}T[0-9]{6}.*\.DBL</drb:nameMatch>
       </drb:signature>
       <drb:schemaLocation>
-          xsd/ALD_U_N_1B_B10.xsd
+          xsd/ALD_U_N_1B_B11.xsd
       </drb:schemaLocation>
       <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
    </owl:Class>
@@ -83,7 +83,7 @@
          <drb:nameMatch>AE_(OPER|RPRO|TEST)_ALD_U_N_2B_[0-9]{8}T[0-9]{6}.*\.DBL</drb:nameMatch>
       </drb:signature>
       <drb:schemaLocation>
-          xsd/ALD_U_N_2B_B10.xsd
+          xsd/ALD_U_N_2B_B11.xsd
       </drb:schemaLocation>
       <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
    </owl:Class>
